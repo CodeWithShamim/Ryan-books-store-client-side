@@ -7,7 +7,12 @@ const Header = () => {
   return (
     <div className="header-container">
       {["md"].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3 py-3">
+        <Navbar
+          key={expand}
+          bg="light"
+          expand={expand}
+          className="navber-container mb-3 py-3"
+        >
           <Container fluid>
             <Navbar.Brand>
               <Link to="/" className="fs-3 fw-bold">
