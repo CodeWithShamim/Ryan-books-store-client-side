@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/Home/Home/Home";
 import LoginForm from "./components/Login/LoginForm/LoginForm";
 import SignupForm from "./components/Login/SignupForm/SignupForm";
-import Footer from "./components/Shared/Footer";
-import Header from "./components/Shared/Header";
-import NotFound from "./components/Shared/NotFound";
+import Footer from "./components/Shared/Footer/Footer";
+import Header from "./components/Shared/Header/Header";
+import NotFound from "./components/Shared/NotFound/NotFound";
 
 function App() {
   return (
