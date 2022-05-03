@@ -1,14 +1,39 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../../Shared/SocialLogin";
 import "./LoginForm.css";
 
 const LoginForm = () => {
   const [show, setShow] = useState(false);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
 
+  // handle login
   const handleLogin = (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    signInWithEmailAndPassword(email, password);
   };
+
+  // get user
+  if (user) {
+    navigate("/");
+  }
+  // get loading
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  // get error
+  let errorMessage;
+  if (error) {
+    errorMessage = error?.code;
+  }
 
   const handleShowPass = () => {
     setShow(!show);
@@ -48,6 +73,8 @@ const LoginForm = () => {
             <Link to="/reset-password">Forgot your password?</Link>
           </p>
         </form>
+        {/* show error message  */}
+        <p className="text-warning">{errorMessage}</p>
         {/* Social login  */}
         <SocialLogin></SocialLogin>
       </div>
