@@ -18,7 +18,7 @@ const InventoryItem = ({ item }) => {
       <h5>{price}</h5>
       <p>{author}</p>
       <button className="submit-btn" onClick={handleInventory}>
-        Details
+        Update
       </button>
     </div>
   );

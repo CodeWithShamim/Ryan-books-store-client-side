@@ -12,6 +12,8 @@ import ForgottonPass from "./components/Login/ForgottonPass";
 import ManageInventory from "./components/ManageInventory/ManageInventory";
 import AddItems from "./components/AddItems/AddItems";
 import Inventory from "./components/Inventory/Inventory";
+// ==========react toastify=========
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      {/* ==========react toastify========= */}
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
