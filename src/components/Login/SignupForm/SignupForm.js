@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Shared/SocialLogin";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
@@ -9,6 +12,8 @@ const SignupForm = () => {
   const [show, setShow] = useState(false);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [sendEmailVerification, sending, verifyError] =
+    useSendEmailVerification(auth);
   const navigate = useNavigate();
 
   // password showing toggle
@@ -17,13 +22,14 @@ const SignupForm = () => {
   };
 
   // handle sign up
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     // console.log(name, email, password);
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    await sendEmailVerification();
   };
 
   // get user
@@ -31,13 +37,13 @@ const SignupForm = () => {
     navigate("/");
   }
   // get loading
-  if (loading) {
+  if (loading || sending) {
     return <Loading></Loading>;
   }
 
   // get error
   let errorMessage;
-  if (error) {
+  if (error || verifyError) {
     errorMessage = error?.code;
   }
 

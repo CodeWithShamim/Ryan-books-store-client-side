@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "./Loading/Loading";
+import { FaGooglePlus } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const SocialLogin = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -53,13 +55,19 @@ const SocialLogin = () => {
         className="bg-danger border-0 text-light mx-3 px-5 rounded"
         onClick={handleGoogleLogin}
       >
-        Google
+        <span className="d-flex align-items-center justify-content-center">
+          <FaGooglePlus className="fs-5" />
+          Google
+        </span>
       </button>
       <button
         className="bg-primary border-0 text-light px-5 rounded"
         onClick={handleFacebookLogin}
       >
-        Facebook
+        <span className="d-flex align-items-center justify-content-center">
+          <FaFacebook className="fs-5" />
+          Facebook
+        </span>{" "}
       </button>
     </div>
   );

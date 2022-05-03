@@ -1,9 +1,13 @@
 import React from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 import "./Header.css";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
   return (
     <div className="header-container">
       {["md"].map((expand) => (
@@ -46,9 +50,16 @@ const Header = () => {
                   <Link className="me-3" to="/add-items">
                     Add items
                   </Link>
-                  <Link className="me-3" to="/login">
-                    Login
-                  </Link>
+                  {user ? (
+                    <Link className="me-3" onClick={() => signOut(auth)} to="">
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link className="me-3" to="/login">
+                      Login
+                    </Link>
+                  )}
+
                   {/* <Link className="me-3" to="/signup">
                     Register
                   </Link> */}
