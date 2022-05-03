@@ -14,7 +14,7 @@ const Header = () => {
         <Navbar key={expand} expand={expand} className="navber-container py-4">
           <Container fluid>
             <Navbar.Brand>
-              <Link to="/" className="fs-3 fw-bold">
+              <Link to="/" className="fs-3 fw-bold  ms-0 ms-md-5 logo">
                 Ryan Books Store
               </Link>
             </Navbar.Brand>
