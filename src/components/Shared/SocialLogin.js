@@ -3,7 +3,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "./Loading/Loading";
 import { FaGooglePlus } from "react-icons/fa";
@@ -18,7 +18,7 @@ const SocialLogin = () => {
 
   //   get user
   if (googleUser || facebookUser) {
-    // toast("Wow, account created successful");
+    toast.success("Wow, login success");
     navigate("/");
   }
   //   get loading

@@ -14,6 +14,7 @@ import AddItems from "./components/AddItems/AddItems";
 import Inventory from "./components/Inventory/Inventory";
 // ==========react toastify=========
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
