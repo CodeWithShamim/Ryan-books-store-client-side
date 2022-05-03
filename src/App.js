@@ -39,7 +39,7 @@ function App() {
       </Routes>
       <Footer></Footer>
       {/* ==========react toastify========= */}
-      <ToastContainer></ToastContainer>
+      <ToastContainer />
     </div>
   );
 }

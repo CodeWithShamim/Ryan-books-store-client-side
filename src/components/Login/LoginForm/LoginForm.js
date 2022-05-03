@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SocialLogin from "../../Shared/SocialLogin";
 import "./LoginForm.css";
 
 const LoginForm = () => {
@@ -47,6 +48,8 @@ const LoginForm = () => {
             <Link to="/reset-password">Forgot your password?</Link>
           </p>
         </form>
+        {/* Social login  */}
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );

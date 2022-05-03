@@ -1,0 +1,68 @@
+import {
+  useSignInWithFacebook,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
+import auth from "../../firebase.init";
+import Loading from "./Loading/Loading";
+
+const SocialLogin = () => {
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+  const [signInWithFacebook, facebookUser, facebookLoading, facebookError] =
+    useSignInWithFacebook(auth);
+  const navigate = useNavigate();
+
+  //   get user
+  if (googleUser || facebookUser) {
+    // toast("Wow, account created successful");
+    navigate("/");
+  }
+  //   get loading
+  if (googleLoading || facebookLoading) {
+    return <Loading></Loading>;
+  }
+  //   get error
+  let error;
+  if (googleError || facebookError) {
+    error = googleError?.code || facebookError?.code;
+  }
+
+  // google & facebook login
+  const handleGoogleLogin = () => {
+    signInWithGoogle();
+  };
+  const handleFacebookLogin = () => {
+    signInWithFacebook();
+  };
+
+  return (
+    <div>
+      {/* set error  */}
+      <p className="text-warning">{error}</p>
+
+      <div className="d-flex align-items-center justify-content-center">
+        <div className="bg-light w-100" style={{ height: "1px" }}></div>
+        <p className="px-2 mt-3">or</p>
+        <div className="bg-light w-100" style={{ height: "1px" }}></div>
+      </div>
+
+      {/* google & facebook login  */}
+      <button
+        className="bg-danger border-0 text-light mx-3 px-5 rounded"
+        onClick={handleGoogleLogin}
+      >
+        Google
+      </button>
+      <button
+        className="bg-primary border-0 text-light px-5 rounded"
+        onClick={handleFacebookLogin}
+      >
+        Facebook
+      </button>
+    </div>
+  );
+};
+
+export default SocialLogin;
