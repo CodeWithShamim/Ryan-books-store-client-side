@@ -1,9 +1,13 @@
 import React from "react";
+import useLoadItems from "../../hooks/useLoadItems";
 
 const ManageInventory = () => {
+  const [items] = useLoadItems();
   return (
     <div>
-      <h1>this is ManageInventory</h1>
+      {items.map((item) => (
+        <h4>{item?.name}</h4>
+      ))}
     </div>
   );
 };

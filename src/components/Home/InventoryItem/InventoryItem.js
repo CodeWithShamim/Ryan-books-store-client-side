@@ -4,11 +4,11 @@ import img from "../../../images/banner/3.jpg";
 import { useNavigate } from "react-router-dom";
 
 const InventoryItem = ({ item }) => {
-  const { id, name, description, price, author } = item;
+  const { _id, name, description, price, author } = item;
   const navigate = useNavigate();
 
   const handleInventory = () => {
-    navigate(`/inventory/${id}`);
+    navigate(`/inventory/${_id}`);
   };
   return (
     <div className="item-container">

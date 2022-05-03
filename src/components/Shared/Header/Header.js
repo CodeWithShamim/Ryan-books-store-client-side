@@ -44,12 +44,23 @@ const Header = () => {
                   <Link className="me-3" to="/blogs">
                     Blogs
                   </Link>
-                  <Link className="me-3" to="/manage-inventory">
-                    Manage Inventory
-                  </Link>
-                  <Link className="me-3" to="/add-items">
-                    Add items
-                  </Link>
+
+                  {/* private items  */}
+                  {user && (
+                    <>
+                      <Link className="me-3" to="/manage-inventory">
+                        Manage Inventory
+                      </Link>
+                      <Link className="me-3" to="/add-items">
+                        Add items
+                      </Link>
+                      <Link className="me-3" to="/my-items">
+                        My items
+                      </Link>
+                    </>
+                  )}
+                  {/* ================ */}
+
                   {user ? (
                     <Link className="me-3" onClick={() => signOut(auth)} to="">
                       Logout

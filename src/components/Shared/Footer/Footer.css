@@ -75,6 +75,10 @@
     color: var(--white);
 }
 
+.footer-distributed .footer-icons a:hover {
+    color: orange;
+}
+
 
 /* Footer Right */
 
@@ -111,6 +115,7 @@
     color: #000000;
     width: 400px;
     padding: 18px;
+    outline: none;
 }
 
 .footer-distributed ::-webkit-input-placeholder {

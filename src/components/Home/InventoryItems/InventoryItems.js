@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
+import useLoadItems from "../../../hooks/useLoadItems";
 import InventoryItem from "../InventoryItem/InventoryItem";
 import "./InventoryItems.css";
 
 const InventoryItems = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    fetch("items.json")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, []);
-
-  console.log(items);
+  const [items] = useLoadItems();
+  // console.log(items);
   return (
     <div className="inventory-main-items">
       <h1 className="mt-5">Inventory book items</h1>
