@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const SignupForm = () => {
+  const [show, setShow] = useState(false);
+
   const handleRegister = (e) => {
     e.preventDefault();
   };
+
+  const handleShowPass = () => {
+    setShow(!show);
+  };
+
   return (
     <div className="main-container">
       <div className="login-container w-50 mx-auto">
@@ -14,32 +21,38 @@ const SignupForm = () => {
           onSubmit={handleRegister}
           className="d-flex flex-column w-75 mx-auto"
         >
-          <label className="text-start" htmlFor="name">
-            Name
-          </label>
-          <input className="mb-3" type="text" name="name" id="name" />
-
-          <label className="text-start" htmlFor="email">
-            Email
-          </label>
-          <input className="mb-3" type="email" name="email" id="email" />
-
-          <label className="text-start" htmlFor="password">
-            Password
-          </label>
           <input
             className="mb-3"
-            type="password"
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="Enter your name"
+          />
+
+          <input
+            className="mb-3"
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="Enter your email"
+          />
+
+          <input
+            className="mb-3"
+            type={show ? "text" : "password"}
             name="password"
             id="password"
+            required
+            placeholder="password"
           />
-          <p className="">
-            Already have an account?{" "}
-            <Link className="text-primary" to="/login">
-              login
-            </Link>
+          <span onClick={handleShowPass}>show</span>
+
+          <p>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
-          <input type="submit" value="Register" />
+          <input className="submit-btn" type="submit" value="Register" />
         </form>
       </div>
     </div>

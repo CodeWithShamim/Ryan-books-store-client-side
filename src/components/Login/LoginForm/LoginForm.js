@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
 
 const LoginForm = () => {
+  const [show, setShow] = useState(false);
+
   const handleLogin = (e) => {
     e.preventDefault();
+  };
+
+  const handleShowPass = () => {
+    setShow(!show);
   };
   return (
     <div className="main-container">
@@ -20,26 +26,25 @@ const LoginForm = () => {
             type="email"
             name="email"
             id="email"
+            required
             placeholder="email here"
           />
           <input
             className="mb-3"
-            type="password"
+            type={show ? "text" : "password"}
             name="password"
             id="password"
+            required
             placeholder="password here"
           />
-          <p className="">
-            Don't have an account?{" "}
-            <Link className="text-primary" to="/signup">
-              sign up
-            </Link>
-          </p>
-          <input type="submit" value="Login" />
+          <span onClick={handleShowPass}>show</span>
+
           <p>
-            <Link className="text-primary" to="/signup">
-              Forgot your password?
-            </Link>
+            Don't have an account? <Link to="/signup">sign up</Link>
+          </p>
+          <input className="submit-btn" type="submit" value="Login" />
+          <p>
+            <Link to="/reset-password">Forgot your password?</Link>
           </p>
         </form>
       </div>

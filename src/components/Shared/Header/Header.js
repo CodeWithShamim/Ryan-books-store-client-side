@@ -11,7 +11,7 @@ const Header = () => {
           key={expand}
           bg="light"
           expand={expand}
-          className="navber-container mb-3 py-3"
+          className="navber-container py-4"
         >
           <Container fluid>
             <Navbar.Brand>
@@ -27,20 +27,31 @@ const Header = () => {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Ryan Books Store
+                  <Link to="/" className="fs-6 fw-bold">
+                    Ryan Books Store
+                  </Link>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Link className="me-3" to="/home">
+                    Home
+                  </Link>
                   <Link className="me-3" to="/blogs">
                     Blogs
+                  </Link>
+                  <Link className="me-3" to="/manage-inventory">
+                    Manage Inventory
+                  </Link>
+                  <Link className="me-3" to="/add-items">
+                    Add items
                   </Link>
                   <Link className="me-3" to="/login">
                     Login
                   </Link>
-                  <Link className="me-3" to="/signup">
+                  {/* <Link className="me-3" to="/signup">
                     Register
-                  </Link>
+                  </Link> */}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

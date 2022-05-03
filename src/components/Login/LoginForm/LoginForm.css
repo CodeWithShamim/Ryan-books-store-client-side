@@ -1,17 +1,82 @@
 .main-container {
     width: 100%;
     height: 100%;
-    background: url("../../../images/curve/1.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../../images/curve/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding: 100px 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    font-family: sans-serif;
+    height: 600px;
 }
 
+::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #c0c0c0;
+}
+
+
+/* ============= form container ============ */
+
 .login-container {
-    background: url("../../../images/curve/1.jpg");
+    background: transparent;
+    height: 100%;
+    width: 100%;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     /* background-color:  */
     padding: 60px 0px;
     margin: 40px 0px 0px 0px;
+    box-sizing: border-box;
+}
+
+.login-container input {
+    /* border-radius: 4px; */
+    outline: none;
+    padding: 3px;
+    background: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid orange;
+    color: #fff;
+    font-size: 12px;
+    /* font-weight: bold; */
+}
+
+
+/* ==========anchor button=============== */
+
+.login-container p a {
+    font-size: 12px;
+    color: rgb(87, 202, 255);
+    font-weight: 600;
+}
+
+.submit-btn {
+    background: linear-gradient(#ff2ed5, rgb(68, 218, 255)) !important;
+    border: 0 !important;
+    width: 200px;
+    margin: 10px auto;
+    padding: 8px 0px !important;
+    border-radius: 3px;
+    color: var(--white);
+    font-weight: 900;
+    transition: 1.2s linear;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(rgb(255, 165, 0), rgb(209, 84, 199)) !important;
+}
+
+
+/* form responsive for mobile device  */
+
+@media only screen and (max-width: 576px) {
+    .login-container {
+        width: 90% !important;
+    }
 }
