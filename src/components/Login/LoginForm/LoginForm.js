@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../../Shared/SocialLogin";
+import { FaEye, FaEyeSlash, FaEnvelope, FaUnlockAlt } from "react-icons/fa";
 import "./LoginForm.css";
 
 const LoginForm = () => {
@@ -51,23 +52,36 @@ const LoginForm = () => {
           onSubmit={handleLogin}
           className="d-flex flex-column w-75 mx-auto"
         >
-          <input
-            className="mb-3"
-            type="email"
-            name="email"
-            id="email"
-            required
-            placeholder="email here"
-          />
-          <input
-            className="mb-3"
-            type={show ? "text" : "password"}
-            name="password"
-            id="password"
-            required
-            placeholder="password here"
-          />
-          <span onClick={handleShowPass}>show</span>
+          {/* set envelpe icon  */}
+          <div className="field-box">
+            <FaEnvelope className="field-icon" />
+            <input
+              className="mb-3 w-100"
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email here"
+            />
+          </div>
+
+          {/* set eye icon  */}
+          <div className="password-box">
+            <span className="eye-icon" onClick={handleShowPass}>
+              {show ? <FaEye /> : <FaEyeSlash />}
+            </span>
+            <span className="field-icon">
+              <FaUnlockAlt />
+            </span>
+            <input
+              className="mb-3 w-100"
+              type={show ? "text" : "password"}
+              name="password"
+              id="password"
+              required
+              placeholder="Password here"
+            />
+          </div>
 
           <p>
             Don't have an account? <Link to="/signup">sign up</Link>

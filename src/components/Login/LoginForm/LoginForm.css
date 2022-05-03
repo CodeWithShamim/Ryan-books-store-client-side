@@ -15,8 +15,32 @@
 
 ::placeholder {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     color: #c0c0c0;
+}
+
+
+/* ============set icon in input field=============== */
+
+.field-box {
+    position: relative;
+}
+
+.field-icon {
+    position: absolute;
+    left: -18px;
+    font-size: 18px;
+    color: rgb(23, 255, 236);
+}
+
+.password-box {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 0;
+    font-size: 18px;
 }
 
 

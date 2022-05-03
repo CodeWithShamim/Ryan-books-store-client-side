@@ -8,6 +8,13 @@ import {
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import { toast } from "react-toastify";
+import {
+  FaEye,
+  FaEyeSlash,
+  FaUnlockAlt,
+  FaEnvelope,
+  FaRegUserCircle,
+} from "react-icons/fa";
 
 const SignupForm = () => {
   const [show, setShow] = useState(false);
@@ -60,33 +67,50 @@ const SignupForm = () => {
           onSubmit={handleRegister}
           className="d-flex flex-column w-75 mx-auto"
         >
-          <input
-            className="mb-3"
-            type="text"
-            name="name"
-            id="name"
-            required
-            placeholder="Enter your name"
-          />
+          {/* set user icon  */}
+          <div className="field-box">
+            <FaRegUserCircle className="field-icon" />
+            <input
+              className="mb-3 w-100"
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Enter your name"
+            />
+          </div>
 
-          <input
-            className="mb-3"
-            type="email"
-            name="email"
-            id="email"
-            required
-            placeholder="Enter your email"
-          />
+          {/* set envelpe icon  */}
+          <div className="field-box">
+            <FaEnvelope className="field-icon" />
+            <input
+              className="mb-3 w-100"
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Enter your email"
+            />
+          </div>
 
-          <input
-            className="mb-3"
-            type={show ? "text" : "password"}
-            name="password"
-            id="password"
-            required
-            placeholder="password"
-          />
-          <span onClick={handleShowPass}>show</span>
+          {/* set eye icon  */}
+          <div className="password-box">
+            <span className="eye-icon" onClick={handleShowPass}>
+              {show ? <FaEye /> : <FaEyeSlash />}
+            </span>
+            <span className="field-icon">
+              <FaUnlockAlt />
+            </span>
+            <input
+              className="mb-3 w-100"
+              type={show ? "text" : "password"}
+              name="password"
+              id="password"
+              required
+              placeholder="Enter your password"
+            />
+          </div>
+          {/* ==========end here ========== */}
 
           <p>
             Already have an account? <Link to="/login">Login</Link>
