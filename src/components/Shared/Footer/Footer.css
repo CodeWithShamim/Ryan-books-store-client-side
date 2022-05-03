@@ -51,6 +51,10 @@
     color: inherit;
 }
 
+.footer-distributed .footer-links a:hover {
+    text-decoration: underline;
+}
+
 .copyright-title {
     color: var(--white);
     font-size: 14px;
@@ -76,7 +80,7 @@
 }
 
 .footer-distributed .footer-icons a:hover {
-    color: orange;
+    color: #0dcaf0;
 }
 
 
@@ -143,12 +147,16 @@
 
 .footer-distributed form button {
     border-radius: 3px;
-    background-color: var(--white);
+    background-color: #0dcaf0;
     color: #000000;
     border: 0;
-    padding: 15px 50px;
+    padding: 13px 50px;
     font-weight: bold;
     float: right;
+}
+
+.footer-distributed form button:hover {
+    background-color: var(--white);
 }
 
 

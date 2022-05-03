@@ -1,3 +1,7 @@
+.header-container {
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 6%);
+}
+
 .header-container .navber-container {
     background-color: var(--white) !important;
 }
