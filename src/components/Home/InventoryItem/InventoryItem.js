@@ -1,10 +1,9 @@
 import React from "react";
 import "./InventoryItem.css";
-import img from "../../../images/banner/3.jpg";
 import { useNavigate } from "react-router-dom";
 
 const InventoryItem = ({ item }) => {
-  const { _id, name, description, price, author } = item;
+  const { _id, img, name, description, price, quantity, suppiler } = item;
   const navigate = useNavigate();
 
   const handleInventory = () => {
@@ -12,14 +11,26 @@ const InventoryItem = ({ item }) => {
   };
   return (
     <div className="item-container">
-      <img src={img} alt="book-img" className="img-fluid" />
-      <h4>{name}</h4>
-      <p>{description}</p>
-      <h5>{price}</h5>
-      <p>{author}</p>
-      <button className="submit-btn" onClick={handleInventory}>
-        Update
-      </button>
+      <div className="left-side">
+        <img src={img} alt="book-img" className="img-fluid" />
+      </div>
+      <div className="right-side">
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <h5>
+          Price: <span className="text-info">{price}</span>
+        </h5>
+        <h5>
+          Quantity: <span className="text-info">{quantity}</span>
+        </h5>
+        <p>{suppiler}</p>
+        <button
+          className="update-btn fw-bold px-5 py-2 rounded bg-transparent"
+          onClick={handleInventory}
+        >
+          Update
+        </button>
+      </div>
     </div>
   );
 };

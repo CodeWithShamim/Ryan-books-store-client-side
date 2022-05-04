@@ -1,4 +1,40 @@
 .item-container {
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif;
+    box-sizing: border-box;
+    /* background: rgb(255, 255, 255); */
     /* padding: 5px; */
+}
+
+.item-container .left-side {
+    flex: 4;
+}
+
+.item-container .right-side {
+    flex: 5;
+    padding: 8px 20px;
+}
+
+.item-container .right-side p {
+    font-size: 14px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.update-btn {
+    border: 1px solid black;
+}
+
+.update-btn:hover {
+    border: 1px solid #ff6434;
+}
+
+@media only screen and (max-width: 992px) {
+    .item-container {
+        flex-direction: column;
+    }
 }

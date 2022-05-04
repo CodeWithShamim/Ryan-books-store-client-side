@@ -29,8 +29,8 @@
 .field-icon {
     position: absolute;
     left: -18px;
-    font-size: 18px;
-    color: rgb(23, 255, 236);
+    font-size: 16px;
+    color: #36dfdf;
 }
 
 .password-box {
