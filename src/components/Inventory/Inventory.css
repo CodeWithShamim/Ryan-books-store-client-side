@@ -1,0 +1,25 @@
+.book-detail {
+    display: flex;
+    margin: 20px 40px;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: rgb(166, 245, 245);
+}
+
+.book-detail .book-detail-left-side {
+    flex: 2;
+    width: 100%;
+}
+
+.book-detail .book-detail-right-side {
+    flex: 3;
+}
+
+@media only screen and (max-width: 576px) {
+    .book-detail {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
