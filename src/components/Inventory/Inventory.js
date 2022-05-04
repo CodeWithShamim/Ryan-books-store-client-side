@@ -8,6 +8,7 @@ const Inventory = () => {
   const { img, name, description, price, quantity, suppiler } = item;
   // add new quantity hooks
   const [newQuantity, setNewQuantity] = useState(quantity);
+  const [modifiedCount, setModifiedCount] = useState(0);
 
   // get items by id
   useEffect(() => {
@@ -15,13 +16,27 @@ const Inventory = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItem(data));
-  }, []);
+  }, [modifiedCount]);
 
   // ---handle delivered---
   const handleDelivered = () => {
     if (quantity) {
       const newQuantity = quantity - 1;
       setNewQuantity(newQuantity);
+    }
+  };
+
+  console.log(item);
+  console.log(modifiedCount);
+  console.log(quantity);
+
+  // --- handle add quantity ---
+  const handleAddQuantity = (e) => {
+    e.preventDefault();
+    const addQuantity = parseInt(e.target.addQuantityField.value);
+    if (addQuantity > 0) {
+      const newAddQuantity = quantity + addQuantity;
+      setNewQuantity(newAddQuantity);
     }
   };
 
@@ -32,12 +47,12 @@ const Inventory = () => {
       fetch(url, {
         method: "PUT",
         headers: {
-          "Content-type": "application/json",
+          "content-type": "application/json",
         },
         body: JSON.stringify({ newQuantity }),
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => setModifiedCount(data.modifiedCount));
     }
   }, [newQuantity]);
 
@@ -50,13 +65,13 @@ const Inventory = () => {
         </div>
 
         {/* --- restock quantity ----- */}
-        <form className="restock-box">
+        <form className="restock-box" onSubmit={handleAddQuantity}>
           <h4>ADD QUANTITY</h4>
           <input
-            type="text"
+            type="number"
             className="p-2"
-            name="restock-quantity"
-            id="restock-quantity"
+            name="addQuantityField"
+            id="addQuantityField"
             placeholder="Enter quantity"
           />
           <input
