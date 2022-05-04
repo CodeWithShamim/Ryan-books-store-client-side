@@ -8,17 +8,73 @@
     background: #16caf0;
 }
 
-.book-detail .book-detail-left-side {
-    flex: 1;
+.book-detail .book-detail-right-side {
+    flex: 3;
 }
 
-.book-detail .book-detail-left-side img {
+.book-detail .book-detail-right-side img {
     width: 100%;
     border-radius: 5px;
 }
 
-.book-detail .book-detail-right-side {
+.book-detail .book-detail-left-side {
+    flex: 5;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/* ---btn style--- */
+
+.btn-box .delivered-btn,
+.manage-inventory-btn {
+    border: 0;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 52, 52);
+    color: #fff;
+    font-weight: 800;
+    transition: 0.3s linear;
+}
+
+.btn-box .delivered-btn:hover {
+    background-color: rgb(255, 160, 160);
+}
+
+.btn-box .manage-inventory-btn {
+    background-color: transparent;
+    border: 1px solid rgb(255, 0, 0);
+    color: #000;
+    transition: 0.3s linear;
+}
+
+.btn-box .manage-inventory-btn:hover {
+    background-color: rgb(255, 208, 0);
+    border: 1px solid rgb(0, 0, 0);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+/* ---btn style end--- */
+
+
+/* --restock quantity-- */
+
+.book-detail .restock-box {
     flex: 3;
+    width: 100%;
+}
+
+.book-detail .restock-box input {
+    width: 85%;
+    outline: none;
+    border: 0;
+    padding: 7px 0px;
+    border-radius: 3px;
 }
 
 

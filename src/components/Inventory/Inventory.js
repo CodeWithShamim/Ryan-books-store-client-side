@@ -18,12 +18,26 @@ const Inventory = () => {
   return (
     <div className="">
       <div className="book-detail">
-        <div className="book-detail-left-side">
+        {/* ---right side ---- */}
+        <div className="book-detail-right-side">
           <img src={img} alt="book-img" className="" />
         </div>
-        <div className="book-detail-right-side">
+
+        {/* --- restock quantity ----- */}
+        <form className="restock-box">
+          <h4>ADD QUANTITY</h4>
+          <input type="text" name="restock-quantity" id="restock-quantity" />
+          <input
+            className="w-50 m-1 bg-transparent border border-light text-light fw-bold"
+            type="submit"
+            value="Restock item"
+          />
+        </form>
+
+        {/* --- left side ---  */}
+        <div className="book-detail-left-side m-2">
           <h5>{name}</h5>
-          <p>{description}</p>
+          <p className="w-75 mx-auto">{description}</p>
           <h5>
             Price: <span>{price}</span>
           </h5>
@@ -31,11 +45,15 @@ const Inventory = () => {
             Quantity: <span>{quantity}</span>
           </h5>
           <h6>{suppiler}</h6>
+
+          <div className="btn-box">
+            <button className="delivered-btn">Delivered</button>
+            <Link to="/manage-inventory">
+              <button className="manage-inventory-btn">Manage inventory</button>
+            </Link>
+          </div>
         </div>
       </div>
-      <Link to="/manage-inventory">
-        <button className="submit-btn">Manage inventory</button>
-      </Link>
     </div>
   );
 };
