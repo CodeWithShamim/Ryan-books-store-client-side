@@ -19,7 +19,7 @@ const Inventory = () => {
     <div className="">
       <div className="book-detail">
         <div className="book-detail-left-side">
-          <img src={img} alt="book-img" className="w-50" />
+          <img src={img} alt="book-img" className="" />
         </div>
         <div className="book-detail-right-side">
           <h5>{name}</h5>
