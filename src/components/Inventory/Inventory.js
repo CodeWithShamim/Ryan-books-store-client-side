@@ -7,7 +7,7 @@ const Inventory = () => {
   const [item, setItem] = useState({});
   const { img, name, description, price, quantity, suppiler } = item;
   // add new quantity hooks
-  const [newQuantity, setNewQuantity] = useState(0);
+  const [newQuantity, setNewQuantity] = useState(quantity);
 
   // get items by id
   useEffect(() => {
@@ -24,12 +24,22 @@ const Inventory = () => {
       setNewQuantity(newQuantity);
     }
   };
-  console.log(newQuantity);
 
   // ---update quantity---
   useEffect(() => {
-    fetch;
-  }, []);
+    const url = `http://localhost:5000/updateQuantity/${id}`;
+    if (newQuantity && quantity) {
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ newQuantity }),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    }
+  }, [newQuantity]);
 
   return (
     <div className="">
@@ -42,9 +52,15 @@ const Inventory = () => {
         {/* --- restock quantity ----- */}
         <form className="restock-box">
           <h4>ADD QUANTITY</h4>
-          <input type="text" name="restock-quantity" id="restock-quantity" />
           <input
-            className="w-75 m-1 bg-transparent border border-light text-light fw-bold"
+            type="text"
+            className="p-2"
+            name="restock-quantity"
+            id="restock-quantity"
+            placeholder="Enter quantity"
+          />
+          <input
+            className="restock-btn w-75 m-2 fw-bold"
             type="submit"
             value="Restock item"
           />

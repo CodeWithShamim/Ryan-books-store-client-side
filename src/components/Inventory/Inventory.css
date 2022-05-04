@@ -70,6 +70,17 @@
     margin: 20px;
 }
 
+.book-detail .restock-box .restock-btn {
+    border: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    color: #fff;
+    transition: 0.5s linear;
+}
+
+.book-detail .restock-box .restock-btn:hover {
+    border: 1px solid red;
+}
+
 .book-detail .restock-box input {
     width: 85%;
     outline: none;
