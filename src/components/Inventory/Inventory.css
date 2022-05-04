@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: flex-end;
     background: #16caf0;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .book-detail .book-detail-right-side {
@@ -22,7 +23,6 @@
     padding: 20px;
     background-color: #ffffff;
     border-radius: 5px;
-    font-family: "Times New Roman", Times, serif;
 }
 
 
@@ -67,6 +67,7 @@
 .book-detail .restock-box {
     flex: 3;
     width: 100%;
+    margin: 20px;
 }
 
 .book-detail .restock-box input {
@@ -83,6 +84,6 @@
 @media only screen and (max-width: 576px) {
     .book-detail {
         flex-direction: column;
-        margin: 10px 20px;
+        margin: 15px 8px;
     }
 }
