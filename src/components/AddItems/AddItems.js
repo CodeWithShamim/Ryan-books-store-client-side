@@ -54,7 +54,7 @@ const AddItems = () => {
   };
 
   return (
-    <div className="my-3">
+    <div>
       {" "}
       {/* ---add from start here--- */}{" "}
       <form onSubmit={handleAddItem} className="add-form-container">
