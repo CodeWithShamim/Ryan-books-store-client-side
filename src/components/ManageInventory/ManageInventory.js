@@ -10,16 +10,23 @@ const ManageInventory = () => {
 
   // ---delete from db---
   const handleDelete = (id, productName) => {
+    const confirmDelete = window.confirm(
+      "Are you sure, you want to delete this item."
+    );
     const url = `http://localhost:5000/deleteItem/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          toast(`${productName}, book item is deleted!`);
-        }
-      });
+
+    // ------=====------
+    if (confirmDelete) {
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            toast(`${productName}, book item is deleted!`);
+          }
+        });
+    }
   };
 
   return (

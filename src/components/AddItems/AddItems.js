@@ -1,7 +1,11 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 import "./AddItems.css";
 
 const AddItems = () => {
+  const [user] = useAuthState(auth);
   // ---add item in db---
   const handleAddItem = (e) => {
     e.preventDefault();
@@ -40,8 +44,13 @@ const AddItems = () => {
       },
       body: JSON.stringify(item),
     })
-      .then((res) => res.json)
-      .then((data) => console.log(data));
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          toast.success("Item added");
+        }
+      });
   };
 
   return (
@@ -60,10 +69,12 @@ const AddItems = () => {
         />
         <input
           type="email"
+          value={user?.email}
           className="add-field"
           name="email"
           id="email"
           required
+          readOnly
           placeholder="Enter email"
         />
         <input
