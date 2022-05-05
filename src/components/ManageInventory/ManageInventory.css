@@ -1,6 +1,13 @@
 .product-table-container {
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    border-radius: 5px;
     font-family: "Times New Roman", Times, serif;
+}
+
+.product-table-container table thead {
+    background-color: aqua;
 }
 
 .product-table-container .delete-btn {
@@ -9,4 +16,10 @@
 
 .product-table-container .delete-btn:hover {
     background-color: rgb(253, 120, 120);
+}
+
+@media only screen and (max-width: 576px) {
+    .product-table-container {
+        padding: 20px 8px;
+    }
 }

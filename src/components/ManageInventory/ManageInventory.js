@@ -32,7 +32,7 @@ const ManageInventory = () => {
   };
 
   return (
-    <div className="container product-table-container my-3">
+    <div className="product-table-container my-3">
       <Table responsive striped bordered hover size="sm">
         <thead>
           <tr>
@@ -40,6 +40,7 @@ const ManageInventory = () => {
             <th>Price</th>
             <th>Quantity</th>
             <th>Suppiler</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
