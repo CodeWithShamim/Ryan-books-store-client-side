@@ -37,3 +37,12 @@
 .add-form-container #email {
     background-color: rgb(235, 235, 235);
 }
+
+@media only screen and (max-width: 576px) {
+    .add-form-container .add-field {
+        width: 96%;
+    }
+    .add-form-container .item-add-btn {
+        width: 50%;
+    }
+}

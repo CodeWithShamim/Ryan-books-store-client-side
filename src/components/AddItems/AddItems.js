@@ -54,7 +54,7 @@ const AddItems = () => {
   };
 
   return (
-    <div className="container my-3">
+    <div className="my-3">
       {" "}
       {/* ---add from start here--- */}{" "}
       <form onSubmit={handleAddItem} className="add-form-container">
@@ -77,14 +77,18 @@ const AddItems = () => {
           readOnly
           placeholder="Enter email"
         />
-        <input
-          type="text"
+        {/* ---description--- */}
+        <textarea
+          cols="30"
+          rows="3"
           className="add-field"
           name="description"
           id="description"
           required
           placeholder="Description"
-        />
+          maxLength="200"
+        ></textarea>
+        {/* ----end description--- */}
         <input
           type="text"
           className="add-field"
