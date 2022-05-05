@@ -19,7 +19,7 @@ const MyItems = () => {
   console.log(myItems);
 
   return (
-    <div className="container m-3">
+    <div className="">
       {myItems.map((myItem) => (
         <MyItem key={myItem._id} myItem={myItem}></MyItem>
       ))}

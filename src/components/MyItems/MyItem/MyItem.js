@@ -10,7 +10,7 @@ const MyItem = ({ myItem }) => {
     navigate(`/inventory/${_id}`);
   };
   return (
-    <div className="item-container my-2 rounded">
+    <div className="item-container rounded mt-4 myitem-box">
       <div className="left-side">
         <img src={img} alt="book-img" className="img-fluid" />
       </div>
