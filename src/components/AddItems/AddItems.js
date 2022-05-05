@@ -2,17 +2,39 @@ import React from "react";
 import "./AddItems.css";
 
 const AddItems = () => {
+  // ---add item in db---
+  const handleAddItem = (e) => {
+    e.preventDefault();
+    const bookName = e.target.name.value;
+    const email = e.target.email.value;
+    const description = e.target.description.value;
+    const photoUrl = e.target.photoUrl.value;
+    const price = e.target.price.value;
+    const quantity = e.target.quantity.value;
+    const suppiler = e.target.suppiler.value;
+    // -------=---------
+    console.log(
+      bookName,
+      email,
+      description,
+      photoUrl,
+      price,
+      quantity,
+      suppiler
+    );
+  };
+
   return (
     <div className="container my-3">
-      <h1 className="text-info text-uppercase mt-4 mb-3">Add Item</h1>
-
       {/* ---add from start here--- */}
-      <form className="add-form-container">
+      <form onSubmit={handleAddItem} className="add-form-container">
+        <h1 className="text-info text-uppercase my-3">Add Item</h1>
         <input
           type="text"
           className="add-field"
           name="name"
           id="name"
+          required
           placeholder="book name"
         />
         <input
@@ -20,6 +42,7 @@ const AddItems = () => {
           className="add-field"
           name="email"
           id="email"
+          required
           placeholder="Enter email"
         />
         <input
@@ -27,6 +50,7 @@ const AddItems = () => {
           className="add-field"
           name="description"
           id="description"
+          required
           placeholder="Description"
         />
         <input
@@ -34,6 +58,7 @@ const AddItems = () => {
           className="add-field"
           name="photoUrl"
           id="photoUrl"
+          required
           placeholder="Photo url"
         />
         <input
@@ -41,6 +66,7 @@ const AddItems = () => {
           className="add-field"
           name="price"
           id="price"
+          required
           placeholder="Price"
         />
         <input
@@ -48,6 +74,7 @@ const AddItems = () => {
           className="add-field"
           name="quantity"
           id="quantity"
+          required
           placeholder="Quantity"
         />
         <input
@@ -55,6 +82,7 @@ const AddItems = () => {
           className="add-field"
           name="suppiler"
           id="suppiler"
+          required
           placeholder="Suppiler name"
         />
         {/* ---submit btn--- */}
