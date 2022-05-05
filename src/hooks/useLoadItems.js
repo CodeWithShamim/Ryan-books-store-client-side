@@ -10,7 +10,7 @@ const useLoadItems = () => {
       .then((data) => setItems(data));
   }, []);
 
-  return [items];
+  return [items, setItems];
 };
 
 export default useLoadItems;

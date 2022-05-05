@@ -33,3 +33,7 @@
 .add-form-container .item-add-btn:hover {
     background-color: #3f98aa;
 }
+
+.add-form-container #email {
+    background-color: rgb(235, 235, 235);
+}

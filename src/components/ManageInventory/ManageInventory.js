@@ -6,7 +6,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const ManageInventory = () => {
-  const [items] = useLoadItems();
+  const [items, setItems] = useLoadItems();
 
   // ---delete from db---
   const handleDelete = (id, productName) => {
@@ -23,6 +23,8 @@ const ManageInventory = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
+            const remaining = items.filter((item) => item._id !== id);
+            setItems(remaining);
             toast(`${productName}, book item is deleted!`);
           }
         });
