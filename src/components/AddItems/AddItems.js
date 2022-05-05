@@ -5,30 +5,51 @@ const AddItems = () => {
   // ---add item in db---
   const handleAddItem = (e) => {
     e.preventDefault();
-    const bookName = e.target.name.value;
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const description = e.target.description.value;
-    const photoUrl = e.target.photoUrl.value;
+    const img = e.target.img.value;
     const price = e.target.price.value;
     const quantity = e.target.quantity.value;
     const suppiler = e.target.suppiler.value;
     // -------=---------
-    console.log(
-      bookName,
-      email,
-      description,
-      photoUrl,
-      price,
-      quantity,
-      suppiler
-    );
+    // console.log(
+    //   name,
+    //   email,
+    //   description,
+    //   photoUrl,
+    //   price,
+    //   quantity,
+    //   suppiler
+    // );
+    const item = {
+      img: img,
+      name: name,
+      email: email,
+      description: description,
+      price: price,
+      quantity: quantity,
+      suppiler: suppiler,
+    };
+
+    // --------=--------------
+    fetch("http://localhost:5000/addItem", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(item),
+    })
+      .then((res) => res.json)
+      .then((data) => console.log(data));
   };
 
   return (
     <div className="container my-3">
-      {/* ---add from start here--- */}
+      {" "}
+      {/* ---add from start here--- */}{" "}
       <form onSubmit={handleAddItem} className="add-form-container">
-        <h1 className="text-info text-uppercase my-3">Add Item</h1>
+        <h1 className="text-info text-uppercase my-3"> Add Item </h1>{" "}
         <input
           type="text"
           className="add-field"
@@ -56,8 +77,8 @@ const AddItems = () => {
         <input
           type="text"
           className="add-field"
-          name="photoUrl"
-          id="photoUrl"
+          name="img"
+          id="img"
           required
           placeholder="Photo url"
         />
@@ -84,11 +105,11 @@ const AddItems = () => {
           id="suppiler"
           required
           placeholder="Suppiler name"
-        />
-        {/* ---submit btn--- */}
+        />{" "}
+        {/* ---submit btn--- */}{" "}
         <input type="submit" className="item-add-btn" value="Add" />
-      </form>
-      {/* ---add form end here--- */}
+      </form>{" "}
+      {/* ---add form end here--- */}{" "}
     </div>
   );
 };
