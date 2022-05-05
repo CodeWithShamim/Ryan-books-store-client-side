@@ -3,9 +3,24 @@ import { Table } from "react-bootstrap";
 import useLoadItems from "../../hooks/useLoadItems";
 import "./ManageInventory.css";
 import { FaTrashAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ManageInventory = () => {
   const [items] = useLoadItems();
+
+  // ---delete from db---
+  const handleDelete = (id, productName) => {
+    const url = `http://localhost:5000/deleteItem/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast(`${productName}, book item is deleted!`);
+        }
+      });
+  };
 
   return (
     <div className="container product-table-container my-3">
@@ -20,13 +35,16 @@ const ManageInventory = () => {
         </thead>
         <tbody>
           {items.map((item) => (
-            <tr>
+            <tr key={item._id}>
               <td className="text-start">{item.name}</td>
               <td>{item.price}</td>
               <td>{item.quantity}</td>
               <td>{item.suppiler}</td>
               <td>
-                <button className="delete-btn border-0 text-light fw-bold rounded">
+                <button
+                  onClick={() => handleDelete(item._id, item.name)}
+                  className="delete-btn border-0 text-light fw-bold rounded"
+                >
                   Delete
                   <FaTrashAlt />
                 </button>
