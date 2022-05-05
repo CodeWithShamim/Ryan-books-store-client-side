@@ -11,7 +11,8 @@ const Inventory = () => {
 
   // get items by id
   useEffect(() => {
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `https://ryan-books-store.herokuapp.com/items/${id}`;
+    // const url = `http://localhost:5000/items/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -46,7 +47,8 @@ const Inventory = () => {
 
   // ---update quantity---
   useEffect(() => {
-    const url = `http://localhost:5000/updateQuantity/${id}`;
+    const url = `https://ryan-books-store.herokuapp.com/updateQuantity/${id}`;
+    // const url = `http://localhost:5000/updateQuantity/${id}`;
     if (newQuantity && quantity) {
       fetch(url, {
         method: "PUT",

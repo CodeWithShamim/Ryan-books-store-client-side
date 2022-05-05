@@ -13,7 +13,9 @@ const ManageInventory = () => {
     const confirmDelete = window.confirm(
       "Are you sure, you want to delete this item."
     );
-    const url = `http://localhost:5000/deleteItem/${id}`;
+
+    const url = `https://ryan-books-store.herokuapp.com/deleteItem/${id}`;
+    // const url = `http://localhost:5000/deleteItem/${id}`;
 
     // ------=====------
     if (confirmDelete) {
