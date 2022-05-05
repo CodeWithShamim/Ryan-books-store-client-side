@@ -9,7 +9,7 @@ const ManageInventory = () => {
 
   return (
     <div className="container product-table-container my-3">
-      <Table striped bordered hover>
+      <Table responsive striped bordered hover size="sm">
         <thead>
           <tr>
             <th className="text-start">Name</th>
