@@ -7,35 +7,39 @@ const Inventory = () => {
   const [item, setItem] = useState({});
   const { img, name, description, price, quantity, suppiler } = item;
   // add new quantity hooks
-  const [newQuantity, setNewQuantity] = useState(quantity);
-  const [modifiedCount, setModifiedCount] = useState(0);
+  const [newQuantity, setNewQuantity] = useState(0);
 
   // get items by id
   useEffect(() => {
     const url = `http://localhost:5000/items/${id}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setItem(data));
-  }, [modifiedCount]);
+      .then((data) => {
+        setItem(data);
+        setNewQuantity(data.quantity);
+      });
+  }, []);
 
   // ---handle delivered---
   const handleDelivered = () => {
     if (quantity) {
-      const newQuantity = quantity - 1;
-      setNewQuantity(newQuantity);
+      const dropQuantity = newQuantity - 1;
+      if (dropQuantity !== -1) {
+        setNewQuantity(dropQuantity);
+      }
     }
   };
 
-  console.log(item);
-  console.log(modifiedCount);
-  console.log(quantity);
+  // console.log(item);
+  // console.log(quantity);
+  // console.log("NEw q", newQuantity);
 
   // --- handle add quantity ---
   const handleAddQuantity = (e) => {
     e.preventDefault();
     const addQuantity = parseInt(e.target.addQuantityField.value);
     if (addQuantity > 0) {
-      const newAddQuantity = quantity + addQuantity;
+      const newAddQuantity = newQuantity + addQuantity;
       setNewQuantity(newAddQuantity);
     }
   };
@@ -52,7 +56,9 @@ const Inventory = () => {
         body: JSON.stringify({ newQuantity }),
       })
         .then((res) => res.json())
-        .then((data) => setModifiedCount(data.modifiedCount));
+        .then((data) => {
+          console.log(data);
+        });
     }
   }, [newQuantity]);
 
@@ -91,7 +97,11 @@ const Inventory = () => {
           <h5>
             Quantity:{" "}
             <span className="text-danger fw-bold fs-4">
-              {newQuantity ? newQuantity : quantity}
+              {newQuantity === 0
+                ? "Stock not available"
+                : newQuantity
+                ? newQuantity
+                : quantity}
             </span>
           </h5>
           <h6>Supplier: {suppiler}</h6>
