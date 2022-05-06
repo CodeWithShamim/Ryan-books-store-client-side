@@ -17,6 +17,7 @@ const useMyItems = () => {
     }, [user]);
 
     console.log(user)
+    console.log(myItems)
     return [myItems, setMyItems]
 
 
