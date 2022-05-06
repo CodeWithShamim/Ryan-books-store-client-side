@@ -31,6 +31,7 @@ const MyItem = ({ myItem }) => {
         .then((data) => {
           if (data.deletedCount > 0) {
             const remaining = myItems.filter((item) => item._id !== id);
+            console.log(remaining);
             setMyItems(remaining);
             toast(`${productName}, book item is deleted!`);
           }
