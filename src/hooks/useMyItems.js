@@ -8,8 +8,8 @@ const useMyItems = () => {
 
     // ---get item by email---
     useEffect(() => {
-        // const url = `https://ryan-books-store.herokuapp.com/getItemByEmail?email=${user?.email}`;
-        const url = `http://localhost:5000/getItemByEmail?email=${user?.email}`;
+        const url = `https://ryan-books-store.herokuapp.com/getItemByEmail?email=${user?.email}`;
+        // const url = `http://localhost:5000/getItemByEmail?email=${user?.email}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setMyItems(data));

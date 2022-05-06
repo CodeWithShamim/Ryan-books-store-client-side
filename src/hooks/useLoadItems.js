@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
 const useLoadItems = () => {
-  const [items, setItems] = useState([]);
+    const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    // fetch("https://ryan-books-store.herokuapp.com/items")
-    fetch("http://localhost:5000/items")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, []);
+    useEffect(() => {
+        fetch("https://ryan-books-store.herokuapp.com/items")
+            // fetch("http://localhost:5000/items")
+            .then((res) => res.json())
+            .then((data) => setItems(data));
+    }, []);
 
-  return [items, setItems];
+    return [items, setItems];
 };
 
 export default useLoadItems;
