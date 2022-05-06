@@ -38,7 +38,7 @@ const MyItems = () => {
   };
 
   return (
-    <div className="">
+    <div className="" style={{ minHeight: "60vh" }}>
       {myItems.map(
         ({ _id, img, name, description, price, quantity, suppiler }) => (
           <div key={_id} className="item-container rounded mt-4 myitem-box">
