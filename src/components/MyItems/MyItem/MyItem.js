@@ -25,7 +25,7 @@ const MyItem = ({ myItem }) => {
         </h5>
         <p>{suppiler}</p>
         <button
-          className="update-btn fw-bold px-5 py-2 rounded bg-transparent"
+          className="update-btn fw-bold px-5 py-2 rounded bg-transparent text-light border-light"
           onClick={handleInventory}
         >
           Update

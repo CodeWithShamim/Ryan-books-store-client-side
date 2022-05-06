@@ -4,8 +4,8 @@ const useLoadItems = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://ryan-books-store.herokuapp.com/items")
-      // fetch("http://localhost:5000/items")
+    // fetch("https://ryan-books-store.herokuapp.com/items")
+    fetch("http://localhost:5000/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

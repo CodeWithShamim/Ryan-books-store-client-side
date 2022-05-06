@@ -11,13 +11,17 @@ const Inventory = () => {
 
   // get items by id
   useEffect(() => {
-    const url = `https://ryan-books-store.herokuapp.com/items/${id}`;
-    // const url = `http://localhost:5000/items/${id}`;
+    // const url = `https://ryan-books-store.herokuapp.com/items/${id}`;
+    const url = `http://localhost:5000/items/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setItem(data);
-        setNewQuantity(data.quantity);
+        if (data.quantity !== "Sold out") {
+          setNewQuantity(parseInt(data.quantity));
+        } else {
+          setNewQuantity(data.quantity);
+        }
       });
   }, []);
 
@@ -27,6 +31,9 @@ const Inventory = () => {
       const dropQuantity = newQuantity - 1;
       if (dropQuantity !== -1) {
         setNewQuantity(dropQuantity);
+      }
+      if (dropQuantity === 0) {
+        setNewQuantity("Sold out");
       }
     }
   };
@@ -40,15 +47,20 @@ const Inventory = () => {
     e.preventDefault();
     const addQuantity = parseInt(e.target.addQuantityField.value);
     if (addQuantity > 0) {
-      const newAddQuantity = newQuantity + addQuantity;
-      setNewQuantity(newAddQuantity);
+      if (newQuantity === "Sold out") {
+        const newAddQuantity = addQuantity;
+        setNewQuantity(newAddQuantity);
+      } else {
+        const newAddQuantity = newQuantity + addQuantity;
+        setNewQuantity(newAddQuantity);
+      }
     }
   };
 
   // ---update quantity---
   useEffect(() => {
-    const url = `https://ryan-books-store.herokuapp.com/updateQuantity/${id}`;
-    // const url = `http://localhost:5000/updateQuantity/${id}`;
+    // const url = `https://ryan-books-store.herokuapp.com/updateQuantity/${id}`;
+    const url = `http://localhost:5000/updateQuantity/${id}`;
     if (newQuantity && quantity) {
       fetch(url, {
         method: "PUT",
@@ -63,6 +75,8 @@ const Inventory = () => {
         });
     }
   }, [newQuantity]);
+
+  console.log(newQuantity);
 
   return (
     <div className="">
@@ -84,6 +98,7 @@ const Inventory = () => {
           />
           <input
             className="restock-btn w-75 m-2 fw-bold"
+            // disabled={newQuantity === "Sold out" ? true : false}
             type="submit"
             value="Restock item"
           />
@@ -99,17 +114,17 @@ const Inventory = () => {
           <h5>
             Quantity:{" "}
             <span className="text-danger fw-bold fs-4">
-              {newQuantity === 0
-                ? "Stock not available"
-                : newQuantity
-                ? newQuantity
-                : quantity}
+              {newQuantity === 0 ? "Sold Out" : newQuantity}
             </span>
           </h5>
           <h6>Supplier: {suppiler}</h6>
 
           <div className="btn-box">
-            <button onClick={handleDelivered} className="delivered-btn">
+            <button
+              onClick={handleDelivered}
+              className="delivered-btn"
+              disabled={newQuantity === "Sold out" ? true : false}
+            >
               Delivered
             </button>
             <Link to="/manage-inventory">

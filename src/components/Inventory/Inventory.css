@@ -90,6 +90,13 @@
 }
 
 
+/* disble btn-- */
+
+#disableTrue {
+    background-color: #000;
+}
+
+
 /* responsive for mobile*/
 
 @media only screen and (max-width: 576px) {
