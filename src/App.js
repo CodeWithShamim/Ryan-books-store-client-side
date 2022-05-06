@@ -17,57 +17,62 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyItems from "./components/MyItems/MyItems";
 import RequireAuth from "./components/Shared/RequireAuth";
+// ==========React loading skeleton=========
+import "react-loading-skeleton/dist/skeleton.css";
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      <Header> </Header>{" "}
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/login" element={<LoginForm></LoginForm>}></Route>
-        <Route path="/signup" element={<SignupForm></SignupForm>}></Route>
+        <Route path="/" element={<Home> </Home>}></Route>
+        <Route Route path="/home" element={<Home> </Home>}></Route>
+        <Route path="/blogs" element={<Blogs> </Blogs>}></Route>
+        <Route path="/login" element={<LoginForm> </LoginForm>}></Route>
+        <Route
+          Route
+          path="/signup"
+          element={<SignupForm> </SignupForm>}
+        ></Route>
         <Route
           path="/reset-password"
-          element={<ForgottonPass></ForgottonPass>}
-        ></Route>
+          element={<ForgottonPass> </ForgottonPass>}
+        ></Route>{" "}
         <Route
           path="/manage-inventory"
           element={
             <RequireAuth>
-              <ManageInventory></ManageInventory>
+              <ManageInventory> </ManageInventory>{" "}
             </RequireAuth>
           }
-        ></Route>
+        ></Route>{" "}
         <Route
           path="/add-items"
           element={
             <RequireAuth>
-              <AddItems></AddItems>
+              <AddItems> </AddItems>{" "}
             </RequireAuth>
           }
-        ></Route>
+        ></Route>{" "}
         <Route
           path="/my-items"
           element={
             <RequireAuth>
-              <MyItems></MyItems>
+              <MyItems> </MyItems>{" "}
             </RequireAuth>
           }
-        ></Route>
+        ></Route>{" "}
         <Route
           path="/inventory/:id"
           element={
             <RequireAuth>
-              <Inventory></Inventory>
+              <Inventory> </Inventory>{" "}
             </RequireAuth>
           }
-        ></Route>
-        <Route path="*" element={<NotFound></NotFound>}></Route>
-      </Routes>
-      <Footer></Footer>
-      {/* ==========react toastify========= */}
+        ></Route>{" "}
+        <Route path="*" element={<NotFound> </NotFound>}></Route>
+      </Routes>{" "}
+      <Footer> </Footer> {/* ==========react toastify========= */}{" "}
       <ToastContainer />
     </div>
   );

@@ -5,9 +5,18 @@ import "./Loading.css";
 const Loading = () => {
   return (
     <div style={{ minHeight: "70vh" }}>
-      <Spinner className="text-primary mt-5" animation="border" role="status">
+      {/* <Spinner className="text-primary mt-5" animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
-      </Spinner>
+      </Spinner> */}
+      <div class="loadingio-spinner-ellipsis-s7y61lziyvq">
+        <div class="ldio-0g354q57q0a8">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   );
 };
