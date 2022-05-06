@@ -14,8 +14,8 @@ const Header = () => {
         <Navbar key={expand} expand={expand} className="navber-container py-3">
           <Container fluid>
             <Navbar.Brand>
-              <Link to="/" className="fs-3 fw-bold  ms-0 ms-md-5 logo">
-                <span className="text-info fs-1">Ryan</span> Books Store
+              <Link to="/" className="fs-2 fw-bold ms-0 ms-md-5 logo">
+                <span className="text-info fs-2 me-2">Ryan </span>Books Store
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
