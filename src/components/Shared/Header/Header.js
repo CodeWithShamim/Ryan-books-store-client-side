@@ -57,11 +57,18 @@ const Header = () => {
                   {/* ================ */}
 
                   {user ? (
-                    <Link className="me-3" onClick={() => signOut(auth)} to="">
+                    <Link
+                      className="me-3 bg-danger px-4 p-1 fw-bold text-light rounded"
+                      onClick={() => signOut(auth)}
+                      to=""
+                    >
                       Logout
                     </Link>
                   ) : (
-                    <Link className="me-3" to="/login">
+                    <Link
+                      className="me-3 bg-danger px-4 p-1 fw-bold text-light rounded"
+                      to="/login"
+                    >
                       Login
                     </Link>
                   )}

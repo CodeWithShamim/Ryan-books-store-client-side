@@ -10,11 +10,11 @@
     background-color: aqua;
 }
 
-.product-table-container .delete-btn {
+.delete-btn {
     background-color: rgb(255, 50, 50);
 }
 
-.product-table-container .delete-btn:hover {
+.delete-btn:hover {
     background-color: rgb(253, 120, 120);
 }
 

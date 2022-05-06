@@ -16,6 +16,8 @@ a {
 }
 
 .header-container .navber-container a {
+    display: flex;
+    align-items: center;
     color: inherit;
     text-decoration: none;
     font-family: sans-serif;
@@ -29,3 +31,14 @@ a {
 .header-container .navber-container a:hover {
     border-bottom: 1px solid rgb(99, 98, 98);
 }
+
+
+/* 
+@media only screen and (max-width: 576px) {
+  
+    .navbar,
+    .navbar-default {
+        font-family: "Times New Roman", Times, serif;
+    }
+    
+} */

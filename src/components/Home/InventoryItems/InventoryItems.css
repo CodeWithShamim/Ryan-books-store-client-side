@@ -1,9 +1,17 @@
 /* .inventory-main-items {
-    background: url("../../../images/side.jpg");
+    background-image: linear-gradient( to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     background-repeat: no-repeat;
     background-position: left;
-    
 } */
+
+.inventory-main-items h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 700;
+    color: #0dcaf0;
+    font-size: 50px;
+    padding: 60px 0px 30px;
+    line-height: 1px;
+}
 
 .inventory-items-container {
     display: grid;
@@ -19,6 +27,9 @@
 @media only screen and (max-width: 576px) {
     .inventory-items-container {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .inventory-main-items h1 {
+        font-size: 30px;
     }
 }
 

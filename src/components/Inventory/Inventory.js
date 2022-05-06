@@ -76,8 +76,6 @@ const Inventory = () => {
     }
   }, [newQuantity]);
 
-  console.log(newQuantity);
-
   return (
     <div className="">
       <div className="book-detail">
@@ -128,7 +126,9 @@ const Inventory = () => {
               Delivered
             </button>
             <Link to="/manage-inventory">
-              <button className="manage-inventory-btn">Manage inventory</button>
+              <button className="manage-inventory-btn ">
+                Manage inventories
+              </button>
             </Link>
           </div>
         </div>

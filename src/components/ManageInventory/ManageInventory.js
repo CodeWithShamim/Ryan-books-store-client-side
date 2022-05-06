@@ -4,6 +4,7 @@ import useLoadItems from "../../hooks/useLoadItems";
 import "./ManageInventory.css";
 import { FaTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const ManageInventory = () => {
   const [items, setItems] = useLoadItems();
@@ -65,6 +66,12 @@ const ManageInventory = () => {
           ))}
         </tbody>
       </Table>
+      {/* ---manage invenrory btn--- */}
+      <Link to="/add-items">
+        <button className="manage-inventory-btn px-5 py-3 mt-0 fw-bold">
+          Add new item
+        </button>
+      </Link>
     </div>
   );
 };
