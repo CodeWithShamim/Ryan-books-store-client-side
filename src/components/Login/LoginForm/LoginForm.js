@@ -24,21 +24,18 @@ const LoginForm = () => {
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
 
-    // create jwt token and set local storage====
+    // ====create jwt token and set local storage====
     const url = "https://ryan-books-store.herokuapp.com/login";
     // const url = "http://localhost:5000/login";
     const { data } = await axios.post(url, { email });
     localStorage.setItem("accessToken", data?.accessToken);
-    console.log(data);
-    toast("Successfully login");
-    navigate(from, { replace: true });
   };
 
   // get user
-  // if (user) {
-  //   toast("Successfully login");
-  //   navigate(from, { replace: true });
-  // }
+  if (user) {
+    toast("Successfully login");
+    navigate(from, { replace: true });
+  }
   // get loading
   if (loading) {
     return <Loading></Loading>;
