@@ -45,17 +45,16 @@
 }
 
 .manage-inventory-btn {
-    background-color: transparent;
-    border: 1px solid rgb(255, 0, 0);
-    color: #000;
+    background-color: rgb(0, 209, 192);
+    color: #fff;
+    border: 1px solid rgb(255, 255, 255);
     transition: 0.4s linear;
 }
 
 .manage-inventory-btn:hover {
-    background-color: rgb(0, 209, 192);
-    border: 1px solid rgb(0, 0, 0);
-    color: #fff;
-    border: 1px solid #fff;
+    background-color: transparent;
+    border: 1px solid red;
+    color: black;
 }
 
 

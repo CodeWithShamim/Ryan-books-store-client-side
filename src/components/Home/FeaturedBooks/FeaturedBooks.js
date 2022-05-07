@@ -32,7 +32,10 @@ const FeaturedBooks = () => {
               <div className="featured-item" key={_id}>
                 <img src={img} alt="featured-img" />
                 <p className="mt-2 fw-light fs-5">{name}</p>
-                <p className="">{suppiler}</p>
+                <p className="text-secondary">{suppiler}</p>
+                <p>
+                  <hr />
+                </p>
                 <p className="fw-bold fs-5">{price}</p>
               </div>
             ))}
