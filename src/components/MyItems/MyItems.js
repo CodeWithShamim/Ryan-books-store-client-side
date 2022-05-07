@@ -45,7 +45,13 @@ const MyItems = () => {
       ) : (
         myItems.map(
           ({ _id, img, name, description, price, quantity, suppiler }) => (
-            <div key={_id} className="item-container rounded mt-4 myitem-box">
+            <div
+              key={_id}
+              className="item-container rounded mt-4 myitem-box"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="800"
+            >
               <div className="left-side">
                 <img src={img} alt="book-img" className="img-fluid" />
               </div>

@@ -30,7 +30,11 @@ const ForgottonPass = () => {
 
   return (
     <div className="main-container">
-      <div className="login-container w-50 mx-auto">
+      <div
+        className="login-container w-50 mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <h2>Reset your password</h2>
         <p className="px-3">
           Enter your account that you want to the reset your email

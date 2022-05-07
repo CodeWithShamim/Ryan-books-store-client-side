@@ -52,7 +52,11 @@ const LoginForm = () => {
   };
   return (
     <div className="main-container">
-      <div className="login-container w-50 mx-auto">
+      <div
+        className="login-container w-50 mx-auto"
+        data-aos="flip-right"
+        data-aos-duration="1000"
+      >
         <h2>Login</h2>
 
         <form

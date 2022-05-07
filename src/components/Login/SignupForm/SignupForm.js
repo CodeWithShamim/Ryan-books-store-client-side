@@ -61,7 +61,11 @@ const SignupForm = () => {
 
   return (
     <div className="main-container">
-      <div className="login-container w-50 mx-auto">
+      <div
+        className="login-container w-50 mx-auto"
+        data-aos="flip-left"
+        data-aos-duration="1000"
+      >
         <h2>Register</h2>
 
         <form

@@ -13,7 +13,6 @@ const Blogs = () => {
           Javascript code to run outside the browser. Nodejs comes with a lot of
           modules and mostly used in web development.
           <br />
-          <br />
           <span className="text-danger fs-5">2. JavaScript:</span> Javascript is
           a Scripting language. It is mostly abbreviated as JS. It can be said
           that Javascript is the updated version of the ECMA script. Javascript
@@ -51,7 +50,6 @@ const Blogs = () => {
           data storage. These databases are best suited for complex queries.
           Vertically Scalable. Follows ACID property
           <br />
-          <br />
           <span className="text-danger fs-5">2. NoSQL:</span> Non-relational or
           distributed database system. They have dynamic schema. These databases
           are best suited for hierarchical data storage. These databases are not
@@ -70,7 +68,6 @@ const Blogs = () => {
           contains encoded JSON objects, including a set of claims. JWTs are
           signed using a cryptographic algorithm to ensure that the claims
           cannot be altered after the token is issued.
-          <br />
           <br />
           <span className="text-danger fs-5">2. how does it work:</span> JWTs
           differ from other web tokens in that they contain a set of claims.
