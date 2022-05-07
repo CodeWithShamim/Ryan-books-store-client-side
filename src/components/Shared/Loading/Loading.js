@@ -8,8 +8,8 @@ const Loading = () => {
       {/* <Spinner className="text-primary mt-5" animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner> */}
-      <div class="loadingio-spinner-ellipsis-s7y61lziyvq">
-        <div class="ldio-0g354q57q0a8">
+      <div className="loadingio-spinner-ellipsis-s7y61lziyvq">
+        <div className="ldio-0g354q57q0a8">
           <div></div>
           <div></div>
           <div></div>

@@ -80,11 +80,7 @@ const Blogs = () => {
           permissions the client has been granted. A JWT is a string made up of
           three parts, separated by dots (.), and serialized using base64.. This
           information is typically used by the server to verify that the user
-          has permission to perform the action they are requesting. There are no
-          mandatory claims for a JWT, but overlaying standards may make claims
-          mandatory. For example, when using JWT as bearer access token under
-          OAuth2.0, iss, sub, aud, and exp must be present. some are more common
-          than others.
+          has permission to perform the action they are requesting.
         </p>
       </div>
     </div>
