@@ -19,8 +19,16 @@ import MyItems from "./components/MyItems/MyItems";
 import RequireAuth from "./components/Shared/RequireAuth";
 // ==========React loading skeleton=========
 import "react-loading-skeleton/dist/skeleton.css";
+// ============ aos for animation ==============
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="App">
       <Header> </Header>{" "}

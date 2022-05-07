@@ -86,7 +86,13 @@ const Inventory = () => {
         <Loading />
       ) : (
         <>
-          <div className="book-detail">
+          <div
+            className="book-detail"
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"
+          >
             {/* ---right side ---- */}
             <div className="book-detail-right-side">
               <img src={img} alt="book-img" className="" />

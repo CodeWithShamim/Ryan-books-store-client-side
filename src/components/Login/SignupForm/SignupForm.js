@@ -45,6 +45,7 @@ const SignupForm = () => {
   // get user
   if (user) {
     toast("Congratulations, sign up complete!");
+    toast("Now check your email for verify");
     navigate(from, { replace: true });
   }
   // get loading
