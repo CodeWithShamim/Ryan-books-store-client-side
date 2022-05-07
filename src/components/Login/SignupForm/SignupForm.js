@@ -65,6 +65,7 @@ const SignupForm = () => {
         className="login-container w-50 mx-auto"
         data-aos="flip-left"
         data-aos-duration="1000"
+        data-aos-anchor-placement="left"
       >
         <h2>Register</h2>
 

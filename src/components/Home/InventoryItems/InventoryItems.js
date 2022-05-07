@@ -17,7 +17,9 @@ const InventoryItems = () => {
           <Loading></Loading>
         ) : (
           <>
-            <h1 className="mt-5">Stock items</h1>
+            <h1 className="mt-5" data-aos="flip-up" data-aos-duration="1000">
+              Stock items
+            </h1>
             <div className="inventory-items-container container">
               {sliceItems?.map((item) => (
                 <InventoryItem key={item._id} item={item}></InventoryItem>

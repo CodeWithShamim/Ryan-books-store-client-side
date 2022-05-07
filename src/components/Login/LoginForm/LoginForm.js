@@ -56,6 +56,7 @@ const LoginForm = () => {
         className="login-container w-50 mx-auto"
         data-aos="flip-right"
         data-aos-duration="1000"
+        data-aos-anchor-placement="left"
       >
         <h2>Login</h2>
 

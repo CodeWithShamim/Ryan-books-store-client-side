@@ -12,25 +12,29 @@ const Banner = () => {
         <Carousel.Item>
           <img className="img-md-fluid" src={banner1} alt="First slide" />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h2 className="">You are your best thing.</h2>
+            <p>If you don’t like to read, you haven’t found the right book.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="h-50" src={banner2} alt="Second slide" />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>And, now that you don’t have to be perfect you can be good.</h2>
+            <p>
+              Many people, myself among them, feel better at the mere sight of a
+              book.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="h-50" src={banner3} alt="Third slide" />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h2>A friend may be waiting behind a stranger’s face.</h2>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              The library is inhabited by spirits that come out of the pages at
+              night.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
