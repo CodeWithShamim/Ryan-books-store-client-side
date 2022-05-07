@@ -25,8 +25,8 @@ const LoginForm = () => {
     await signInWithEmailAndPassword(email, password);
 
     // create jwt token and set local storage====
-    // const url = "https://ryan-books-store.herokuapp.com/login";
-    const url = "http://localhost:5000/login";
+    const url = "https://ryan-books-store.herokuapp.com/login";
+    // const url = "http://localhost:5000/login";
     const { data } = await axios.post(url, { email });
     localStorage.setItem("accessToken", data?.accessToken);
     console.log(data);

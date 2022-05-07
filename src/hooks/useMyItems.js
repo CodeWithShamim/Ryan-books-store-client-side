@@ -12,8 +12,8 @@ const useMyItems = () => {
     // ---get item by email---
     useEffect(() => {
         setLoader(true);
-        // const url = `https://ryan-books-store.herokuapp.com/getItemByEmail?email=${user?.email}`;
-        const url = `http://localhost:5000/getItemByEmail?email=${user?.email}`;
+        const url = `https://ryan-books-store.herokuapp.com/getItemByEmail?email=${user?.email}`;
+        // const url = `http://localhost:5000/getItemByEmail?email=${user?.email}`;
         const loadMyItems = async() => {
             try {
                 const { data } = await axios(url, {
