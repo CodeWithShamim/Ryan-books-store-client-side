@@ -7,6 +7,7 @@ import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../../Shared/SocialLogin";
 import { FaEye, FaEyeSlash, FaEnvelope, FaUnlockAlt } from "react-icons/fa";
 import "./LoginForm.css";
+import axios from "axios";
 
 const LoginForm = () => {
   const [show, setShow] = useState(false);
@@ -17,18 +18,27 @@ const LoginForm = () => {
   const from = location?.state?.from?.pathname || "/";
 
   // handle login
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+
+    // create jwt token and set local storage====
+    // const url = "https://ryan-books-store.herokuapp.com/login";
+    const url = "http://localhost:5000/login";
+    const { data } = await axios.post(url, { email });
+    localStorage.setItem("accessToken", data?.accessToken);
+    console.log(data);
+    toast("Successfully login");
+    navigate(from, { replace: true });
   };
 
   // get user
-  if (user) {
-    toast("Successfully login");
-    navigate(from, { replace: true });
-  }
+  // if (user) {
+  //   toast("Successfully login");
+  //   navigate(from, { replace: true });
+  // }
   // get loading
   if (loading) {
     return <Loading></Loading>;
