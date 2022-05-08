@@ -1,5 +1,5 @@
 .featured-main-container {
-    margin: 80px auto;
+    margin: 80px auto 0px;
     background: #f5f5f5;
 }
 
@@ -9,6 +9,7 @@
     /* grid-gap: 30px; */
     font-family: "Times New Roman", Times, serif;
     font-weight: 500;
+    padding-bottom: 80px;
 }
 
 .featured-container .featured-item {

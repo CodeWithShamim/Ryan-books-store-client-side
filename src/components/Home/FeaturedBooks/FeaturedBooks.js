@@ -26,7 +26,13 @@ const FeaturedBooks = () => {
         <Loading />
       ) : (
         <>
-          <h2 className="pt-5 pt-md-0">Featured Books</h2>
+          <h2
+            className="pt-5 pt-md-0"
+            data-aos="zoom-in"
+            data-aos-duration="800"
+          >
+            Featured Books
+          </h2>
           <div className="featured-container mt-5">
             {featureds.map(({ _id, img, name, price, suppiler }) => (
               <div
