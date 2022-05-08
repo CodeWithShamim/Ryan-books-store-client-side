@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "./Contact.css";
 
 const Contact = () => {
+  const handleContact = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="contact-container">
       <section className="ftco-section">
@@ -12,23 +16,14 @@ const Contact = () => {
             <div className="col-md-12">
               <div className="wrapper">
                 <div className="row no-gutters mb-5">
-                  <div className="col-md-7">
+                  <div className="col-md-7 contact-form">
                     <div className="contact-wrap w-100 p-md-5 p-4">
                       <h3 className="mb-4">Contact Us</h3>
-                      <div id="form-message-warning" className="mb-4"></div>
-                      <div id="form-message-success" className="mb-4">
-                        Your message was sent, thank you!
-                      </div>
-                      <form
-                        method="POST"
-                        id="contactForm"
-                        name="contactForm"
-                        className="contactForm"
-                      >
+                      <form onSubmit={handleContact} className="contactForm">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="form-group">
-                              <label className="label text-start" for="name">
+                              <label className="label" htmlFor="name">
                                 Full Name
                               </label>
                               <input
@@ -42,7 +37,7 @@ const Contact = () => {
                           </div>
                           <div className="col-md-6">
                             <div className="form-group">
-                              <label className="label text-start" for="email">
+                              <label className="label" htmlFor="email">
                                 Email Address
                               </label>
                               <input
@@ -56,7 +51,7 @@ const Contact = () => {
                           </div>
                           <div className="col-md-12">
                             <div className="form-group">
-                              <label className="label text-start" for="subject">
+                              <label className="label" htmlFor="subject">
                                 Subject
                               </label>
                               <input
@@ -70,7 +65,7 @@ const Contact = () => {
                           </div>
                           <div className="col-md-12">
                             <div className="form-group">
-                              <label className="label text-start" for="#">
+                              <label className="label" htmlFor="message">
                                 Message
                               </label>
                               <textarea
@@ -88,7 +83,7 @@ const Contact = () => {
                               <input
                                 type="submit"
                                 value="Send Message"
-                                className="btn btn-primary"
+                                className="btn btn-info mt-3 px-5 py-3"
                               />
                               <div className="submitting"></div>
                             </div>
@@ -97,17 +92,17 @@ const Contact = () => {
                       </form>
                     </div>
                   </div>
-                  <div className="col-md-5 d-flex align-items-stretch">
+                  <div className="col-md-5 d-flex align-items-center justify-content-center">
                     <div id="map">
                       <img
-                        src="https://i.postimg.cc/Jz2Kcp0J/download-1.jpg"
+                        src="https://i.postimg.cc/zDLj8szg/Screenshot-20.png"
                         alt="map-img"
-                        className="img-fluid p-5"
+                        className="img-fluid"
                       />
                     </div>
                   </div>
                 </div>
-                <div className="row">
+                <div className="row d-flex align-items-start justify-content-center bg-secondary rounded contact-address p-4">
                   <div className="col-md-3">
                     <div className="dbox w-100 text-center">
                       <div className="icon d-flex align-items-center justify-content-center">
@@ -115,8 +110,8 @@ const Contact = () => {
                       </div>
                       <div className="text">
                         <p>
-                          <span>Address:</span> 198 West 21th Street, Suite 721
-                          New York NY 10016
+                          <span>Address:</span> 142, south mugdhapara,
+                          shabujbagh, 1214, Dhaka
                         </p>
                       </div>
                     </div>
@@ -128,8 +123,7 @@ const Contact = () => {
                       </div>
                       <div className="text">
                         <p>
-                          <span>Phone:</span>{" "}
-                          <a href="tel://1234567920">+ 1235 2355 98</a>
+                          <span>Phone:</span> <Link to="">+88001799999999</Link>
                         </p>
                       </div>
                     </div>
@@ -142,9 +136,7 @@ const Contact = () => {
                       <div className="text">
                         <p>
                           <span>Email:</span>{" "}
-                          <a href="mailto:info@yoursite.com">
-                            info@yoursite.com
-                          </a>
+                          <Link to="">shamimislam@gmail.com</Link>
                         </p>
                       </div>
                     </div>
@@ -156,7 +148,8 @@ const Contact = () => {
                       </div>
                       <div className="text">
                         <p>
-                          <span>Website</span> <Link to="">yoursite.com</Link>
+                          <span>Website</span>{" "}
+                          <Link to="">codewithshamim.web.app</Link>
                         </p>
                       </div>
                     </div>
