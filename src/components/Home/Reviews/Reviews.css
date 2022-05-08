@@ -1,10 +1,11 @@
 .reviews-container {
     position: relative;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .reviews-container .reviews-items {
     color: #fff;
-    background: linear-gradient(rgba(7, 171, 177, 0.6), rgba(8, 160, 180, 0.6)), url("../../../images/blogs-bg.jpg");
+    background: linear-gradient(rgba(3, 105, 109, 0.6), rgba(10, 127, 143, 0.6)), url("../../../images/blogs-bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -12,8 +13,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 200px;
-    margin-bottom: 350px;
+    padding: 200px 0px;
+    margin-bottom: 300px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.reviews-container .reviews-items h1 {
+    font-size: 48px;
+    color: rgb(163, 0, 0);
 }
 
 
@@ -64,6 +71,9 @@
     }
     .carousel-card-box {
         bottom: -720px;
+    }
+    .reviews-container .reviews-items h1 {
+        font-size: 35px;
     }
 }
 

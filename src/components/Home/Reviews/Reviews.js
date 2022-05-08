@@ -5,8 +5,8 @@ const Reviews = () => {
   return (
     <div className="reviews-container">
       <div className="reviews-items">
-        <p>Testimonial</p>
-        <h1>Kinds Words From Customers</h1>
+        <h5>Testimonial</h5>
+        <h1 className="fw-bold">Kinds Words From Customers</h1>
       </div>
 
       {/* _________carousel card item start__________ */}
@@ -23,7 +23,7 @@ const Reviews = () => {
               className="img-fluid review-img"
               alt=""
             />
-            <p>Sales manager</p>
+            <p className="fw-bold text-danger">Sales manager</p>
           </div>
         </div>
         <div className="card">
@@ -38,7 +38,7 @@ const Reviews = () => {
               className="img-fluid review-img"
               alt=""
             />
-            <p>Sales manager</p>
+            <p className="fw-bold text-danger">Sales manager</p>
           </div>
         </div>
         <div className="card">
@@ -52,7 +52,7 @@ const Reviews = () => {
               className="img-fluid review-img"
               alt=""
             />
-            <p>Sales manager</p>
+            <p className="fw-bold text-danger">Sales manager</p>
           </div>
         </div>
       </div>
