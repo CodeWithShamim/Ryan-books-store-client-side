@@ -121,6 +121,9 @@ const Inventory = () => {
               <h2>{name}</h2>
               <p className="w-75 mx-auto">{description}</p>
               <h5>
+                Sold: <span className="text-danger fw-bold">10</span>
+              </h5>
+              <h5>
                 Price: <span className="text-danger fw-bold">{price}</span>
               </h5>
               <h5>

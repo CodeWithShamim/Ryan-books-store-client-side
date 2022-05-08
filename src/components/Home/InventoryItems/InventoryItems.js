@@ -17,15 +17,19 @@ const InventoryItems = () => {
           <Loading></Loading>
         ) : (
           <>
-            <h1 className="mt-5" data-aos="flip-up" data-aos-duration="1000">
-              Stock items
+            <h1
+              className="mt-0 mt-md-5"
+              data-aos="flip-up"
+              data-aos-duration="1000"
+            >
+              Stock Items
             </h1>
             <div className="inventory-items-container container">
               {sliceItems?.map((item) => (
                 <InventoryItem key={item._id} item={item}></InventoryItem>
               ))}
             </div>
-            {/* ---manage invenrory btn--- */}
+            {/* ---manage inventory btn--- */}
             <Link to="/manage-inventory">
               <button className="manage-inventory-btn px-5 py-3 mt-0 fw-bold">
                 Manage inventories

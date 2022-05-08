@@ -1,7 +1,7 @@
 .blogs-container {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../images/blogs-bg.jpg");
-    color: rgb(233, 230, 230);
-    font-weight: 500;
+    color: rgb(172, 172, 172);
+    font-weight: 400;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
@@ -13,7 +13,7 @@
 }
 
 .blogs-container .blog h3 {
-    color: rgb(0, 255, 255);
+    color: rgb(0, 206, 206);
     font-size: 30px;
 }
 
@@ -24,7 +24,8 @@
 .blogs-container .blog {
     border-radius: 5px;
     margin: 20px 10px;
-    background: rgba(56, 56, 56, 0.5);
+    background: rgba(56, 56, 56, 0.7);
+    padding: 10px;
 }
 
 
