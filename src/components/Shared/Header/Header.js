@@ -54,6 +54,11 @@ const Header = () => {
                       </Link>
                     </>
                   )}
+
+                  {/* --------contact route--------- */}
+                  <Link className="me-3 mb-3 mb-md-0" to="/contact">
+                    Contact
+                  </Link>
                   {/* ================ */}
 
                   {user ? (

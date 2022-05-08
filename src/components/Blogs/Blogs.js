@@ -17,28 +17,24 @@ const Blogs = () => {
           a Scripting language. It is mostly abbreviated as JS. It can be said
           that Javascript is the updated version of the ECMA script. Javascript
           is a high-level programming language that uses the concept of Oops but
-          it is based on prototype inheritance. Difference between Nodejs and
-          JavaScript.
+          it is based on prototype inheritance.
         </p>
       </div>
       <div className="blog blog-2">
         <h3>When should you use nodejs and when should you use mongodb</h3>
         <p>
-          Nodejs is a Javascript engine that you can write any application you
-          want with (by programming in the Javascript language). It runs your
-          Javascript code. Most commonly, it is used to build servers that can
-          respond to web requests, though it can be used for lots of other types
-          of code too. MongoDB is a database engine. Code within some
-          application or server uses MongoDB to save, query or update data in a
-          database. There are many web servers built with nodejs that will then
-          use MongoDB for storing data. MongoDB offers an API library that runs
-          within a Nodejs application to give you programmatic access to MongoDB
-          so you can create databases and then add, query, update or delete data
-          from the MongoDB database. MongoDB also has API libraries for other
-          programming environments such as Python, Java, etc... These two
-          technologies are for different parts of a typical web server system.
-          You don't substitute one for the other. Instead, you can use them
-          together.
+          Nodejs is a Javascript runtime environment that you can write any
+          application. It runs your Javascript code. Most commonly, it is used
+          to build servers that can respond to web requests, though it can be
+          used for lots of other types of code too. MongoDB is a database
+          engine. Code within some application or server uses MongoDB to save,
+          query or update data in a database. There are many web servers built
+          with nodejs that will then use MongoDB for storing data. MongoDB
+          offers an API library that runs within a Nodejs application to give
+          you programmatic access to MongoDB so you can create databases and
+          then add, query, update or delete data from the MongoDB database.
+          MongoDB also has API libraries for other programming environments such
+          as Python, Java, etc...
         </p>
       </div>
       <div className="blog blog-3">
@@ -69,7 +65,7 @@ const Blogs = () => {
           signed using a cryptographic algorithm to ensure that the claims
           cannot be altered after the token is issued.
           <br />
-          <span className="text-danger fs-5">2. how does it work:</span> JWTs
+          <span className="text-danger fs-5">2. how does it work:</span> JWT is
           differ from other web tokens in that they contain a set of claims.
           Claims are used to transmit information between two parties. What
           these claims are depends on the use case at hand. For example, a claim

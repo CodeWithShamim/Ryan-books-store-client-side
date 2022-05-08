@@ -23,6 +23,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   useEffect(() => {
@@ -78,6 +79,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>{" "}
+        <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="*" element={<NotFound> </NotFound>}></Route>
       </Routes>{" "}
       <Footer> </Footer> {/* ==========react toastify========= */}{" "}

@@ -1,6 +1,6 @@
 .blogs-container {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../images/blogs-bg.jpg");
-    color: rgb(172, 172, 172);
+    color: rgb(207, 207, 207);
     font-weight: 400;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -24,7 +24,7 @@
 .blogs-container .blog {
     border-radius: 5px;
     margin: 20px 10px;
-    background: rgba(56, 56, 56, 0.7);
+    background: rgba(56, 56, 56, 0.5);
     padding: 10px;
 }
 

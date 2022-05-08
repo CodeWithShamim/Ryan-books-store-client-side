@@ -15,7 +15,7 @@ const Reviews = () => {
 
       {/* _________carousel card item start__________ */}
       <div className="carousel-card-box container">
-        <div className="card" data-aos="fade-left" data-aos-duration="800">
+        <div className="card" data-aos="fade-down" data-aos-duration="1000">
           <p>
             I’ve read this book online and this is so disappointing the way the
             book ended. Where is the rest of the story.
@@ -30,7 +30,7 @@ const Reviews = () => {
             <p className="fw-bold text-danger">Sales manager</p>
           </div>
         </div>
-        <div className="card" data-aos="fade-down" data-aos-duration="800">
+        <div className="card" data-aos="fade-down" data-aos-duration="1000">
           <p>
             I’ve read this book online and this is so disappointing the way the
             book ended. Where is the rest of the story.
@@ -45,7 +45,7 @@ const Reviews = () => {
             <p className="fw-bold text-danger">Sales manager</p>
           </div>
         </div>
-        <div className="card" data-aos="fade-right" data-aos-duration="800">
+        <div className="card" data-aos="fade-down" data-aos-duration="1000">
           <p>
             I’ve read this book online and this is so disappointing the way the
             book ended. Where is the rest of the story.
