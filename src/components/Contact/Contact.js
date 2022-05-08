@@ -19,6 +19,8 @@ const Contact = () => {
                   <div className="col-md-7 contact-form">
                     <div className="contact-wrap w-100 p-md-5 p-4">
                       <h3 className="mb-4">Contact Us</h3>
+
+                      {/* ___________form___________________ */}
                       <form onSubmit={handleContact} className="contactForm">
                         <div className="row">
                           <div className="col-md-6">
@@ -92,7 +94,9 @@ const Contact = () => {
                       </form>
                     </div>
                   </div>
-                  <div className="col-md-5 d-flex align-items-center justify-content-center">
+
+                  {/* ____________map__________________ */}
+                  <div className="col-md-5 d-flex align-items-center justify-content-center mt-3 mt-md-0">
                     <div id="map">
                       <img
                         src="https://i.postimg.cc/zDLj8szg/Screenshot-20.png"
@@ -102,6 +106,8 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* _____________address ____________ */}
                 <div className="row d-flex align-items-start justify-content-center bg-secondary rounded contact-address p-4">
                   <div className="col-md-3">
                     <div className="dbox w-100 text-center">
