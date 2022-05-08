@@ -56,6 +56,7 @@ const Reviews = () => {
           </div>
         </div>
       </div>
+
       {/* _________carousel card item end */}
     </div>
   );

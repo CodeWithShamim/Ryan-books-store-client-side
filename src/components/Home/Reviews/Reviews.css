@@ -5,6 +5,9 @@
 .reviews-container .reviews-items {
     color: #fff;
     background: linear-gradient(rgba(7, 171, 177, 0.6), rgba(8, 160, 180, 0.6)), url("../../../images/blogs-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,10 +53,28 @@
 }
 
 
-/* ____________responsive for mobile______________ */
+/* ____________responsive for mobile & tablet______________ */
 
 @media only screen and (max-width: 576px) {
     .carousel-card-box {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .reviews-container .reviews-items {
+        margin-bottom: 750px;
+    }
+    .carousel-card-box {
+        bottom: -720px;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .carousel-card-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .reviews-container .reviews-items {
+        margin-bottom: 500px;
+    }
+    .carousel-card-box {
+        bottom: -460px;
     }
 }
