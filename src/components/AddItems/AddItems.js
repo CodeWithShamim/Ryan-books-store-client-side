@@ -50,6 +50,7 @@ const AddItems = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
+          e.target.reset();
           toast.success("Item added");
         }
       });
