@@ -8,6 +8,8 @@ const Reviews = () => {
         <p>Testimonial</p>
         <h1>Kinds Words From Customers</h1>
       </div>
+
+      {/* _________carousel card item start__________ */}
       <div className="carousel-card-box container">
         <div className="card">
           <p>
@@ -54,6 +56,7 @@ const Reviews = () => {
           </div>
         </div>
       </div>
+      {/* _________carousel card item end */}
     </div>
   );
 };
