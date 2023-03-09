@@ -6,7 +6,7 @@ const useLoadItems = () => {
 
     useEffect(() => {
         setLoader(true)
-        fetch("https://ryan-books-store.herokuapp.com/items")
+        fetch("https://rbs-backend.vercel.app/items")
             // fetch("http://localhost:5000/items")
             .then((res) => res.json())
             .then((data) => {

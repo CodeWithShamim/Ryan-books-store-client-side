@@ -12,7 +12,7 @@ const useMyItems = () => {
     // ---get item by email---
     useEffect(() => {
         setLoader(true);
-        const url = `https://ryan-books-store.herokuapp.com/getItemByEmail?email=${user?.email}`;
+        const url = `https://rbs-backend.vercel.app/getItemByEmail?email=${user?.email}`;
         // const url = `http://localhost:5000/getItemByEmail?email=${user?.email}`;
         const loadMyItems = async() => {
             try {

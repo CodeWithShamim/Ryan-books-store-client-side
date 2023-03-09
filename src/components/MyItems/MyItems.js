@@ -19,7 +19,7 @@ const MyItems = () => {
       "Are you sure, you want to delete this item."
     );
 
-    const url = `https://ryan-books-store.herokuapp.com/deleteItem/${id}`;
+    const url = `https://rbs-backend.vercel.app/deleteItem/${id}`;
     // const url = `http://localhost:5000/deleteItem/${id}`;
 
     // ------=====------

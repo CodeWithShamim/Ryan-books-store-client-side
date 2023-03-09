@@ -37,7 +37,7 @@ const AddItems = () => {
     };
 
     // --------=--------------
-    const url = `https://ryan-books-store.herokuapp.com/addItem`;
+    const url = `https://rbs-backend.vercel.app/addItem`;
     // const url = `http://localhost:5000/addItem`;
     fetch(url, {
       method: "POST",

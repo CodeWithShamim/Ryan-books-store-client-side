@@ -11,7 +11,7 @@ const FeaturedBooks = () => {
     const loadFeatured = async () => {
       setLoader(true);
       const { data } = await axios(
-        "https://ryan-books-store.herokuapp.com/getFeatured"
+        "https://rbs-backend.vercel.app/getFeatured"
       );
       setFeatureds(data);
       setLoader(false);

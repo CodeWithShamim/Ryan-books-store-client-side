@@ -19,7 +19,7 @@ const SocialLogin = () => {
 
   //   get user
   if (googleUser || facebookUser) {
-    toast.success("Wow, login success");
+    // toast.success("Wow, login success");
     navigate(from, { replace: true });
   }
   //   get loading

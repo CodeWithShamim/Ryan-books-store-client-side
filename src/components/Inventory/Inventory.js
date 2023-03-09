@@ -13,7 +13,7 @@ const Inventory = () => {
 
   // get items by id
   useEffect(() => {
-    const url = `https://ryan-books-store.herokuapp.com/items/${id}`;
+    const url = `https://rbs-backend.vercel.app/items/${id}`;
     // const url = `http://localhost:5000/items/${id}`;
     setLoader(true);
     fetch(url)
@@ -63,7 +63,7 @@ const Inventory = () => {
 
   // ---update quantity---
   useEffect(() => {
-    const url = `https://ryan-books-store.herokuapp.com/updateQuantity/${id}`;
+    const url = `https://rbs-backend.vercel.app/updateQuantity/${id}`;
     // const url = `http://localhost:5000/updateQuantity/${id}`;
     if (newQuantity && quantity) {
       fetch(url, {
